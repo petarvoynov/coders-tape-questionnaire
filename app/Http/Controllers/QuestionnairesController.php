@@ -23,11 +23,12 @@ class QuestionnairesController extends Controller
 
         $questionnaire = Questionnaire::create($data);
 
-        return redirect('/home');
+        return redirect()->route('questionnaires.show', ['questionnaire' => $questionnaire->id]);
     }
 
     public function show(Questionnaire $questionnaire)
     {
         return view('questionnaires.show', compact('questionnaire'));
     }
+
 }

@@ -19,10 +19,8 @@ class QuestionnairesController extends Controller
             'purpose' => 'required'
         ]);
 
-        $data['user_id'] = auth()->id();
-
-        $questionnaire = Questionnaire::create($data);
-
+        $questionnaire = auth()->user()->questionnaires()->create($data);
+ 
         return redirect()->route('questionnaires.show', ['questionnaire' => $questionnaire->id]);
     }
 

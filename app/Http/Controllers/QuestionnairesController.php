@@ -24,6 +24,10 @@ class QuestionnairesController extends Controller
         $questionnaire = Questionnaire::create($data);
 
         return redirect('/home');
+    }
 
+    public function show(Questionnaire $questionnaire)
+    {
+        return view('questionnaires.show', compact('questionnaire'));
     }
 }

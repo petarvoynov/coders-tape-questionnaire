@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/questionnaires/create', 'QuestionnairesController@create')->name('questionnaires.create');
 Route::post('/questionnaires', 'QuestionnairesController@store')->name('questionnaires.store');
+Route::get('/questionnaires/{questionnaire}', 'QuestionnairesController@show')->name('questionnaires.show');

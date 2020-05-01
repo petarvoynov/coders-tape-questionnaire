@@ -12,4 +12,9 @@ class Questionnaire extends Model
     {
         return $this->blongsTo(User::class);
     }
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
 }

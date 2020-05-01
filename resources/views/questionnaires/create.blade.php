@@ -8,7 +8,7 @@
                 <div class="card-header">Create New Questionnaire</div>
 
                 <div class="card-body">
-                    <form action="/questionnaires" method="POST">
+                    <form action="{{ route('questionnaires.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="title">Title</label>

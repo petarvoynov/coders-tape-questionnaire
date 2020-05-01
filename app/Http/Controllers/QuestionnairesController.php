@@ -31,6 +31,8 @@ class QuestionnairesController extends Controller
 
     public function show(Questionnaire $questionnaire)
     {
+        $questionnaire->load('questions.answers');
+
         return view('questionnaires.show', compact('questionnaire'));
     }
 

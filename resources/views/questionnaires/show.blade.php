@@ -11,6 +11,19 @@
                     <a class="btn btn-dark" href="{{ route('questions.create', ['questionnaire' => $questionnaire->id]) }}">Add New Question</a>
                 </div>
             </div>
+
+            @foreach ($questionnaire->questions as $question)
+                <div class="card mt-4">
+                    <div class="card-header">{{ $question->question }}</div>
+                    <div class="card-body">
+                        @foreach ($question->answers as $answer)
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ $answer->answer }}</li>
+                            </ul>
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>

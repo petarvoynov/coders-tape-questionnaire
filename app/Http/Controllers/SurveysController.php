@@ -18,7 +18,9 @@ class SurveysController extends Controller
     {
         $data = request()->validate([
             'responses.*.answer_id' => 'required',
-            'responses.*.question_id' => 'required'
+            'responses.*.question_id' => 'required',
+            'survey.name' => 'required',
+            'survey.email' => 'required|email'
         ]);
     }
 }

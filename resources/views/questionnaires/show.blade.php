@@ -23,6 +23,13 @@
                         @endforeach
                         </ul>
                     </div>
+                    <div class="card-footer">
+                        <form action="{{ route('questions.destroy', ['questionnaire' => $questionnaire->id, 'question' => $question->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-outline-danger">Delete Question</button>
+                        </form>
+                    </div>
                 </div>
             @endforeach
         </div>

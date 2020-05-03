@@ -9,6 +9,7 @@
 
                 <div class="card-body">
                     <a class="btn btn-dark" href="{{ route('questions.create', ['questionnaire' => $questionnaire->id]) }}">Add New Question</a>
+                    <a class="btn btn-dark" href="{{ route('surveys.show', ['questionnaire' => $questionnaire->id, 'slug' => Str::slug($questionnaire->title)]) }}">Take Survey</a>
                 </div>
             </div>
 
@@ -16,11 +17,11 @@
                 <div class="card mt-4">
                     <div class="card-header">{{ $question->question }}</div>
                     <div class="card-body">
-                        @foreach ($question->answers as $answer)
-                            <ul class="list-group">
-                                <li class="list-group-item">{{ $answer->answer }}</li>
-                            </ul>
+                        <ul class="list-group">
+                        @foreach ($question->answers as $answer)  
+                            <li class="list-group-item">{{ $answer->answer }}</li>
                         @endforeach
+                        </ul>
                     </div>
                 </div>
             @endforeach

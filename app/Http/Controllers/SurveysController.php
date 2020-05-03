@@ -16,6 +16,9 @@ class SurveysController extends Controller
 
     public function store(Questionnaire $questionnaire)
     {
-        dd(request()->all());
+        $data = request()->validate([
+            'responses.*.answer_id' => 'required',
+            'responses.*.question_id' => 'required'
+        ]);
     }
 }
